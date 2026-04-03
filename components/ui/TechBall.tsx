@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion"
 import dynamic from "next/dynamic"
-import React, { useState } from "react"
+import { useState } from "react"
 
 import { type Technology } from "@/data"
 
@@ -10,24 +10,12 @@ const BallCanvas = dynamic(async () => import("./BallCanvas"), { ssr: false })
 
 const TechBall = ({ tech }: { tech: Technology }) => {
   const [active, setActive] = useState(false)
-  const isTouchDevice = React.useRef(false)
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    e.preventDefault()
-    isTouchDevice.current = true
-    setActive((prev) => !prev)
-  }
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => {
-        if (!isTouchDevice.current) setActive(true)
-      }}
-      onMouseLeave={() => {
-        if (!isTouchDevice.current) setActive(false)
-      }}
-      onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
     >
       <div
         className="size-20 sm:size-28 transition-transform duration-200"
@@ -43,7 +31,7 @@ const TechBall = ({ tech }: { tech: Technology }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 sm:w-64 rounded-xl p-4 pointer-events-none shadow-lg shadow-purple/20"
+            className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden sm:block w-64 rounded-xl p-4 pointer-events-none shadow-lg shadow-purple/20"
             style={{
               zIndex: 100,
               background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
