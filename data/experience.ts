@@ -15,7 +15,7 @@ export const expCards: ExpCard[] = [
     logoPath: "/images/logo1.png",
     title: "サイバーエージェント",
     startDate: { year: 2023, month: 4 },
-    endDate: { year: 2025, month: 4 },
+    endDate: { year: 2026, month: 1 },
     type: "main",
     lineColor: "#06b6d4",
     responsibilities: [
@@ -25,15 +25,30 @@ export const expCards: ExpCard[] = [
     ],
   },
   {
+    logoPath: "/images/logo1.png",
+    title: "wevnal",
+    startDate: { year: 2026, month: 3 },
+    endDate: null,
+    type: "main",
+    lineColor: "#06b6d4",
+    responsibilities: [],
+  },
+  {
     logoPath: "/images/logo2.png",
-    title: "フルスタック開発（副業）",
-    startDate: { year: 2024, month: 5 },
-    endDate: { year: 2025, month: 1 },
+    title: "Stract（副業）",
+    startDate: { year: 2025, month: 1 },
+    endDate: { year: 2026, month: 1 },
     type: "side",
     lineColor: "#a78bfa",
-    responsibilities: [
-      "スケーラビリティを重視したWebアプリケーション開発をリード。",
-      "バックエンドエンジニアと連携し、APIとフロントエンドのシームレスな統合を実現。",
-    ],
+    responsibilities: [],
   },
-]
+  {
+    logoPath: "/images/logo2.png",
+    title: "Kecak（副業）",
+    startDate: { year: 2026, month: 1 },
+    endDate: null,
+    type: "side",
+    lineColor: "#a78bfa",
+    responsibilities: [],
+  },
+];

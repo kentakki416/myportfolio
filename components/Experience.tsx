@@ -56,6 +56,7 @@ const Experience = () => {
                 style={{
                   top: `${topP}%`,
                   height: `${heightP}%`,
+                  minHeight: "100px",
                   backgroundColor: card.lineColor,
                   opacity: 0.8,
                 }}
@@ -123,6 +124,7 @@ const Experience = () => {
                 style={{
                   top: `${topP}%`,
                   height: `${heightP}%`,
+                  minHeight: "80px",
                   right: "calc(50% + 48px)",
                   left: 0,
                 }}

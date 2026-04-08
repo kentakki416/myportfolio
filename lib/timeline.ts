@@ -2,7 +2,8 @@ import { expCards, type ExpCard, type YearMonth } from "@/data"
 
 export const toMonths = (d: YearMonth) => d.year * 12 + d.month
 
-export const NOW: YearMonth = { year: 2025, month: 4 }
+const now = new Date()
+export const NOW: YearMonth = { year: now.getFullYear(), month: now.getMonth() + 1 }
 
 export const formatDate = (d: YearMonth | null) =>
   d ? `${d.year}年${d.month}月` : "現在"

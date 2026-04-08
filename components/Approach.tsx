@@ -12,7 +12,7 @@ const Approach = () => {
         <ApproachCard
           title="ソリューションの提案"
           icon={<AceternityIcon order="強み 1" />}
-          des="複数企業で培った幅広い技術スタック（フロントエンド・バックエンド・インフラ）を武器に、CI/CD構築・監視体制の整備・保守運用の効率化・開発フローの改善など、プロジェクトの課題に最適な解決策を提案します。"
+          des="複数企業で培った豊富な経験をもとに、プロジェクトの課題に対して最適なソリューションを提案します。提案にとどまらず、改善案の立案から実行・遂行までを一貫して推進します。"
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -22,7 +22,7 @@ const Approach = () => {
         <ApproachCard
           title="SRE整備"
           icon={<AceternityIcon order="強み 2" />}
-          des="DatadogやSentryなどを用いたオブザーバビリティの強化や、DBやキャッシュを用いたパフォーマンスチューニングはもちろん、プロジェクト全体の可用性やSLO/SLIの強化まで幅広く対応します。"
+          des="DatadogやSentryを活用したオブザーバビリティの強化・ロギング整備からコスト削減、IaCによるインフラ構築、AIを用いた開発体験の向上まで幅広く対応。プロジェクト全体の可用性やSLO/SLIの強化も推進します。"
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -37,7 +37,7 @@ const Approach = () => {
         <ApproachCard
           title="フルスタック開発"
           icon={<AceternityIcon order="強み 3" />}
-          des="JavaScriptを最も得意として、Backend・Web・Mobileすべてを高品質で開発できます。パフォーマンスを意識した実装や、変更に強いアーキテクチャの設計まで一貫して対応します。"
+          des="フロントエンドとバックエンドの双方からキャッシュ・負荷・保守性を考慮し、最適なアプローチで実装します。変更しやすく壊れにくいアーキテクチャを設計・提案します。"
         >
           <CanvasRevealEffect
             animationSpeed={3}

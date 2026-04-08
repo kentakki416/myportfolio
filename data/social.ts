@@ -1,10 +1,12 @@
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/icons/git.svg",
+    link: "https://github.com/",
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/icons/twit.svg",
+    link: "https://x.com/A03817",
   },
 ]

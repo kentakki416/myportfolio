@@ -6,8 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "マイポートフォリオ",
-  description: "モダンでミニマルなポートフォリオサイト",
+  title: "Kentakki416's portfolio",
+  description: "fullstack enginner's portfolio",
 }
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="dark">
       <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
+        <link rel="icon" href="/images/porigon2.png" sizes="any" />
       </head>
       <body className={inter.className}>
         {children}

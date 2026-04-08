@@ -44,7 +44,7 @@ const Hero = () => {
             はじめまして！私のポートフォリオを訪れてくれてありがとうございます！
           </p>
 
-          <a href="#about">
+          <a href="#projects">
             <MagicButton
               title="作品を見る"
               icon={<FaLocationArrow />}

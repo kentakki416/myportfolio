@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { IoCopyOutline } from "react-icons/io5"
+import { HiOutlineGlobeAlt } from "react-icons/hi"
+import { HiOutlineCube } from "react-icons/hi2"
 import Lottie from "react-lottie"
 
 import animationData from "@/data/confetti.json"
@@ -48,8 +50,18 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["TypeScript", "Node.js", "Docker"]
-  const rightLists = ["Redis", "MongoDB", "PostgreSQL"]
+  const interests = [
+    {
+      icon: <HiOutlineGlobeAlt className="text-xl lg:text-2xl text-purple" />,
+      label: "Network",
+      desc: "TCP/IP, DNS, CDN",
+    },
+    {
+      icon: <HiOutlineCube className="text-xl lg:text-2xl text-purple" />,
+      label: "Architecture",
+      desc: "Microservices, DDD",
+    },
+  ]
 
   const [copied, setCopied] = useState(false)
 
@@ -126,29 +138,29 @@ export const BentoGridItem = ({
           {id === 2 && <GridGlobe />}
 
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute bottom-3 right-3 lg:bottom-5 lg:right-5">
-              <div className="flex flex-col gap-2 lg:gap-4">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:p-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100
-                    rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-col gap-2 lg:gap-4">
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:p-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100
-                    rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-col gap-3 lg:gap-4 mt-4 w-full z-10">
+              {interests.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 lg:gap-4 rounded-xl px-3 py-2.5 lg:px-4 lg:py-3"
+                  style={{
+                    background: "rgba(203, 172, 249, 0.06)",
+                    border: "1px solid rgba(203, 172, 249, 0.15)",
+                  }}
+                >
+                  <div className="flex items-center justify-center shrink-0 size-9 lg:size-10 rounded-lg bg-[#10132E]">
+                    {item.icon}
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm lg:text-base font-semibold text-white">
+                      {item.label}
+                    </span>
+                    <span className="text-xs lg:text-sm text-[#C1C2D3]">
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
           {id === 6 && (

@@ -2,19 +2,46 @@
 
 import { AnimatePresence, motion } from "framer-motion"
 import dynamic from "next/dynamic"
-import { useState } from "react"
+import { useCallback, useRef, useState } from "react"
 
 import { type Technology } from "@/data"
 
 const BallCanvas = dynamic(async () => import("./BallCanvas"), { ssr: false })
 
+const POPUP_WIDTH = 256
+const MARGIN = 16
+
 const TechBall = ({ tech }: { tech: Technology }) => {
   const [active, setActive] = useState(false)
+  const [popupPos, setPopupPos] = useState({ left: 0, top: 0 })
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseEnter = useCallback(() => {
+    if (!containerRef.current) {
+      setActive(true)
+      return
+    }
+
+    const rect = containerRef.current.getBoundingClientRect()
+    const containerCenter = rect.left + rect.width / 2
+
+    let left = containerCenter - POPUP_WIDTH / 2
+    if (left < MARGIN) {
+      left = MARGIN
+    }
+    if (left + POPUP_WIDTH > window.innerWidth - MARGIN) {
+      left = window.innerWidth - MARGIN - POPUP_WIDTH
+    }
+
+    setPopupPos({ left, top: rect.bottom + 8 })
+    setActive(true)
+  }, [])
 
   return (
     <div
+      ref={containerRef}
       className="relative"
-      onMouseEnter={() => setActive(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setActive(false)}
     >
       <div
@@ -31,9 +58,11 @@ const TechBall = ({ tech }: { tech: Technology }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden sm:block w-64 rounded-xl p-4 pointer-events-none shadow-lg shadow-purple/20"
+            className="fixed hidden sm:block w-64 rounded-xl p-4 pointer-events-none shadow-lg shadow-purple/20"
             style={{
               zIndex: 100,
+              left: popupPos.left,
+              top: popupPos.top,
               background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
               border: "1px solid rgba(203, 172, 249, 0.3)",
               backdropFilter: "blur(16px)",
