@@ -4,7 +4,7 @@ import { CanvasRevealEffect } from "./ui/CanvasRevealEffect"
 
 const Approach = () => {
   return (
-    <section id="strengths" className="w-full py-20 px-5 md:px-10 lg:px-20">
+    <section id="strengths" className="w-full pt-40 md:pt-52 pb-20 px-5 md:px-10 lg:px-20">
       <h1 className="heading">
         私の <span className="text-purple">強み</span>
       </h1>

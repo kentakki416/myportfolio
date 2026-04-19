@@ -1,6 +1,6 @@
 export { navItems } from "./nav"
 export { gridItems } from "./grid"
 export { technologies, techCategories, type Technology, type TechCategory } from "./technologies"
-export { projects, projectCategories, type ProjectCategory } from "./projects"
+export { projects, projectCategories, type ProjectCategory, type Project, type ProjectDetail } from "./projects"
 export { expCards, type ExpCard, type YearMonth } from "./experience"
 export { socialMedia } from "./social"

@@ -1,9 +1,12 @@
 "use client"
 
 import { useGSAP } from "@gsap/react"
+import { AnimatePresence, motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useState } from "react"
 
+import type { ExpCard, TaskItem } from "@/data/experience"
 import {
   toMonths,
   endMonths,
@@ -17,6 +20,8 @@ import {
 gsap.registerPlugin(ScrollTrigger)
 
 const Experience = () => {
+  const [selected, setSelected] = useState<ExpCard | null>(null)
+
   useGSAP(() => {
     gsap.utils.toArray(".exp-fade").forEach((el) => {
       gsap.from(el as Element, {
@@ -88,19 +93,20 @@ const Experience = () => {
                     <p className="text-base text-white-100 mt-1">
                       {formatDate(card.startDate)} 〜 {formatDate(card.endDate)}
                     </p>
-                    <p className="text-[#839CB5] italic mt-4 mb-3">担当業務</p>
-                    <ul className="list-disc ms-5 flex flex-col gap-3 text-white-100">
-                      {card.responsibilities.map((r, i) => (
-                        <li key={i} className="text-base">{r}</li>
-                      ))}
-                    </ul>
+                    <button
+                      onClick={() => setSelected(card)}
+                      className="mt-4 text-sm text-purple hover:underline cursor-pointer"
+                    >
+                      詳細を見る →
+                    </button>
                   </div>
                 </div>
 
                 {/* スマホ用 */}
                 <div
-                  className="absolute z-10 md:hidden"
+                  className="absolute z-10 md:hidden cursor-pointer"
                   style={{ top: `${topP}%`, left: "calc(50% + 30px)", right: 0 }}
+                  onClick={() => setSelected(card)}
                 >
                   <p className="text-xs text-white font-semibold">{card.title}</p>
                   <p className="text-[10px] text-white-100">
@@ -136,12 +142,12 @@ const Experience = () => {
                     <p className="text-sm text-white-100 mt-1">
                       {formatDate(card.startDate)} 〜 {formatDate(card.endDate)}
                     </p>
-                    <p className="text-[#839CB5] italic mt-3 mb-2 text-sm">担当業務</p>
-                    <ul className="list-none flex flex-col gap-2 text-white-100">
-                      {card.responsibilities.map((r, i) => (
-                        <li key={i} className="text-sm">{r}</li>
-                      ))}
-                    </ul>
+                    <button
+                      onClick={() => setSelected(card)}
+                      className="mt-3 text-sm text-purple hover:underline cursor-pointer"
+                    >
+                      詳細を見る →
+                    </button>
                   </div>
 
                   {/* 線 + ロゴ */}
@@ -156,7 +162,10 @@ const Experience = () => {
                   </div>
 
                   {/* スマホ用テキスト */}
-                  <div className="md:hidden flex-1 text-right pr-2">
+                  <div
+                    className="md:hidden flex-1 text-right pr-2 cursor-pointer"
+                    onClick={() => setSelected(card)}
+                  >
                     <p className="text-xs text-white font-semibold">{card.title}</p>
                     <p className="text-[10px] text-white-100">
                       {formatDate(card.startDate)} 〜 {formatDate(card.endDate)}
@@ -168,6 +177,104 @@ const Experience = () => {
           })}
         </div>
       </div>
+
+      {/* モーダル */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {/* オーバーレイ */}
+            <motion.div
+              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+              onClick={() => setSelected(null)}
+            />
+
+            {/* モーダル本体 */}
+            <motion.div
+              className="relative w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl border border-white/10 p-6 md:p-8"
+              style={{ background: "rgba(14, 14, 16, 0.95)" }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* 閉じるボタン */}
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 text-white-100 hover:text-white transition-colors cursor-pointer"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* ヘッダー */}
+              <div className="flex items-center gap-4 mb-6">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center border flex-none"
+                  style={{
+                    borderColor: selected.lineColor,
+                    backgroundColor: "rgba(14, 14, 16, 1)",
+                  }}
+                >
+                  <img
+                    src={selected.logoPath}
+                    alt="logo"
+                    className="w-full h-full object-contain rounded-full"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-white">
+                    {selected.title}
+                  </h2>
+                  <p className="text-sm text-white-100">
+                    {formatDate(selected.startDate)} 〜 {formatDate(selected.endDate)}
+                  </p>
+                </div>
+              </div>
+
+              {/* プロジェクト詳細 */}
+              {selected.details?.map((detail, dIdx) => (
+                <div key={dIdx} className="mb-6 last:mb-0">
+                  <div
+                    className="flex items-center gap-2 mb-3 pb-2 border-b"
+                    style={{ borderColor: "rgba(255,255,255,0.1)" }}
+                  >
+                    <div
+                      className="w-2 h-2 rounded-full flex-none"
+                      style={{ backgroundColor: selected.lineColor }}
+                    />
+                    <h3 className="text-base md:text-lg font-semibold text-white">
+                      {detail.project}
+                    </h3>
+                  </div>
+                  <ul className="list-disc ms-5 flex flex-col gap-2 text-white-100">
+                    {detail.tasks.map((task, tIdx) =>
+                      typeof task === "string" ? (
+                        <li key={tIdx} className="text-sm">{task}</li>
+                      ) : (
+                        <li key={tIdx} className="text-sm">
+                          {task.title}
+                          <ul className="list-disc ms-5 flex flex-col gap-1 mt-1">
+                            {task.children.map((child, cIdx) => (
+                              <li key={cIdx} className="text-sm">{child}</li>
+                            ))}
+                          </ul>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
