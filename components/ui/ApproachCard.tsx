@@ -31,7 +31,7 @@ const ApproachCard = ({
       onMouseLeave={() => { if (!isTouchDevice.current) setActive(false) }}
       onTouchEnd={handleTouchEnd}
       className="border border-black/[0.2] flex items-center justify-center
-       dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 relative h-80 lg:h-[35rem] rounded-3xl cursor-pointer"
+       dark:border-white/[0.2] w-full lg:flex-1 lg:min-w-0 mx-auto p-4 relative h-80 lg:h-[35rem] rounded-3xl cursor-pointer overflow-hidden"
       style={{
         background: "rgb(4,7,29)",
         backgroundColor:
@@ -56,9 +56,9 @@ const ApproachCard = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 px-4 md:px-10 flex flex-col items-center justify-center size-full">
+      <div className="relative z-20 px-2 md:px-6 lg:px-4 xl:px-10 flex flex-col items-center justify-center size-full overflow-hidden">
         <div
-          className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-200 min-w-40 mx-auto flex items-center justify-center ${
+          className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-200 mx-auto flex items-center justify-center ${
             active ? "opacity-0 -translate-y-4" : "opacity-100"
           }`}
         >
@@ -66,15 +66,15 @@ const ApproachCard = ({
         </div>
 
         <div
-          className={`transition duration-200 flex flex-col items-center pt-8 md:pt-16 ${
+          className={`transition duration-200 flex flex-col items-center pt-8 md:pt-16 w-full ${
             active ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h2 className="text-white text-center text-xl md:text-3xl font-bold whitespace-nowrap">
+          <h2 className="text-white text-center text-lg md:text-3xl lg:text-xl xl:text-2xl font-bold break-words w-full">
             {title}
           </h2>
           <p
-            className="text-xs md:text-base lg:text-lg mt-4 md:mt-8 text-center"
+            className="text-xs md:text-base lg:text-sm xl:text-base mt-4 md:mt-8 text-center break-words w-full"
             style={{ color: "#E4ECFF" }}
           >
             {des}

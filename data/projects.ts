@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "Money Management",
     des: "複数の決済サービスに対応し、支出を自動でカテゴリ分類。お金の使い道をひと目で把握できる家計管理アプリです。",
     img: "/projects/p1.svg",
-    iconLists: ["/projects/re.svg", "/projects/tail.svg", "/projects/ts.svg", "/projects/next.svg", "/projects/dock.svg"],
+    iconLists: ["/projects/re.svg", "/projects/tail.svg", "/projects/ts.svg", "/projects/next.svg", "/projects/mysql.svg"],
     category: "web",
     detail: {
       overview: "Turborepoによるモノレポ構成で、Web（Next.js）・管理画面の2つのフロントエンドを持つ家計管理アプリです。複数の決済サービスのCSVを取り込み、支出を自動でカテゴリ分類・可視化します。",

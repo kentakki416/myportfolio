@@ -8,7 +8,7 @@ const AceternityIcon = ({ order }: { order: string }) => {
         />
         <span
           className="inline-flex size-full cursor-pointer items-center justify-center
-        rounded-full bg-slate-950 px-3 py-1.5 md:px-5 md:py-2 text-purple backdrop-blur-3xl font-bold text-lg md:text-2xl"
+        rounded-full bg-slate-950 px-3 py-1.5 md:px-5 md:py-2 text-purple backdrop-blur-3xl font-bold text-lg md:text-2xl lg:text-xl xl:text-2xl whitespace-nowrap"
         >
           {order}
         </span>

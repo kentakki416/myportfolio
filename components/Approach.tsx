@@ -8,7 +8,7 @@ const Approach = () => {
       <h1 className="heading">
         私の <span className="text-purple">強み</span>
       </h1>
-      <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
+      <div className="my-20 flex flex-col lg:flex-row items-stretch justify-center w-full gap-4">
         <ApproachCard
           title="ソリューションの提案"
           icon={<AceternityIcon order="強み 1" />}
