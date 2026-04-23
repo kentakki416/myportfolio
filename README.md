@@ -6,8 +6,6 @@ Next.js + TypeScript で構築したポートフォリオサイトです。
 ## デモ
 https://myportfolio-eight-woad-35.vercel.app/
 
-![demo](public/demo.png)
-
 
 
 ## 技術スタック
