@@ -75,21 +75,41 @@ export default function ProjectDetailPage({
           ))}
         </div>
 
-        {/* デモ動画 */}
-        {detail.videoPath && (
+        {/* スクリーンショット・デモ */}
+        {detail.media && detail.media.length > 0 && (
           <section className="mb-12">
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4">
-              デモ動画
+              スクリーンショット・デモ
             </h2>
-            <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video">
-              <video
-                src={detail.videoPath}
-                controls
-                className="size-full object-contain"
-                poster={project.img}
-              >
-                <track kind="captions" />
-              </video>
+            <div className="flex flex-col gap-6">
+              {detail.media.map((m, i) =>
+                m.type === "video" ? (
+                  <div
+                    key={i}
+                    className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video"
+                  >
+                    <video
+                      src={m.src}
+                      controls
+                      className="size-full object-contain"
+                      poster={project.img}
+                    >
+                      <track kind="captions" />
+                    </video>
+                  </div>
+                ) : (
+                  <div
+                    key={i}
+                    className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-black"
+                  >
+                    <img
+                      src={m.src}
+                      alt={m.alt}
+                      className="w-full object-contain"
+                    />
+                  </div>
+                )
+              )}
             </div>
           </section>
         )}

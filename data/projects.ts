@@ -6,11 +6,17 @@ export const projectCategories: { key: ProjectCategory; label: string }[] = [
   { key: "oss", label: "OSS" },
 ]
 
+export type ProjectMedia = {
+  type: "image" | "video";
+  src: string;
+  alt: string;
+};
+
 export type ProjectDetail = {
   overview: string;
   features: string[];
   techDescription: string;
-  videoPath?: string;
+  media?: ProjectMedia[];
   githubUrl?: string;
 };
 
@@ -31,7 +37,7 @@ export const projects: Project[] = [
     slug: "money-management",
     title: "Money Management",
     des: "複数の決済サービスに対応し、支出を自動でカテゴリ分類。お金の使い道をひと目で把握できる家計管理アプリです。",
-    img: "/projects/p1.svg",
+    img: "/projects/money-management.png",
     iconLists: ["/projects/re.svg", "/projects/tail.svg", "/projects/ts.svg", "/projects/next.svg", "/projects/mysql.svg"],
     category: "web",
     detail: {
@@ -44,8 +50,11 @@ export const projects: Project[] = [
         "管理画面によるユーザー管理・グローバル統計・カテゴリルール管理",
       ],
       techDescription: "DIパターンによるController/Repository/Serviceの責務分離で、拡張性と保守性に優れたAPI設計を実現。Zodスキーマをモノレポ内のパッケージとしてフロントエンドと共有することで、API境界の型安全性を担保しています。インフラはTerraformによるIaC管理とGitHub ActionsによるCI/CDの自動化で、安全かつ迅速なデプロイを可能にしています。",
-      videoPath: "/videos/money-management-demo.mp4",
-      githubUrl: "https://github.com/example/money-management",
+      media: [
+        { type: "video", src: "/projects/money-management.mp4", alt: "Money Management デモ動画" },
+        { type: "image", src: "/projects/money-management-admin.png", alt: "Money Management 管理画面" },
+      ],
+      githubUrl: "https://github.com/kentakki416/money-management",
     },
   },
   {
@@ -66,7 +75,6 @@ export const projects: Project[] = [
         "Clerk認証によるユーザー管理",
       ],
       techDescription: "Next.js App Routerでルーティングを構築し、Stream Video SDKでWebRTC通信を抽象化。認証はClerkを採用し、ミドルウェアでルート保護を実現しました。UIはTailwind CSSとshadcn/uiで構築しています。",
-      videoPath: "/videos/yoom-demo.mp4",
       githubUrl: "https://github.com/example/yoom",
     },
   },
@@ -88,7 +96,6 @@ export const projects: Project[] = [
         "画像の保存・ダウンロード・共有",
       ],
       techDescription: "Next.js 14でフルスタック構築し、Cloudinary AIのAPIで画像処理を実現。決済はStripe Checkoutを導入し、Webhookでクレジット付与を自動化。データベースはMongoDB + Mongooseを使用しています。",
-      videoPath: "/videos/ai-image-demo.mp4",
       githubUrl: "https://github.com/example/ai-image-saas",
     },
   },
@@ -110,7 +117,6 @@ export const projects: Project[] = [
         "完全レスポンシブ対応",
       ],
       techDescription: "GSAPのScrollTriggerでスクロール位置に応じたアニメーションを制御。Three.jsでiPhoneのGLTFモデルを読み込み、マテリアルの動的切り替えでカラーバリエーションを実現しました。ビデオ再生はIntersection Observerで制御しています。",
-      videoPath: "/videos/apple-iphone-demo.mp4",
       githubUrl: "https://github.com/example/apple-iphone-3d",
     },
   },
