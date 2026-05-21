@@ -100,6 +100,32 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 5,
+    slug: "programming-practice",
+    title: "Programming Practice",
+    des: "ブラウザ上で JavaScript の練習問題を解きながら学習できる、自動採点機能付きの学習プラットフォームです。",
+    img: "/projects/programming-practice/home.png",
+    iconLists: ["/projects/re.svg", "/projects/tail.svg", "/projects/ts.svg", "/projects/next.svg"],
+    category: "web",
+    detail: {
+      overview: "Turborepoによるモノレポ構成で、Web（Next.js 16）・モバイル（Expo）・API（Express 5）を一括管理するプログラミング学習プラットフォームです。ブラウザ上のエディタで問題を解き、自動採点で即座にフィードバックを得られます。将来的に Go / C++ などの言語追加にも対応できる構成を意識しています。",
+      features: [
+        "Web エディタによる JavaScript 問題演習・コード実行・テスト採点",
+        "Web Worker サンドボックスによるブラウザ完結の自動採点（DoS / インジェクションリスクなし）",
+        "問題コンテンツ（meta.json / description.md / initial-code.js / tests.json）を Git 管理の静的ファイルとして提供し、PR レビュー・ロールバックを Git で完結",
+        "Google OAuth + JWT による認証・解答状況の蓄積",
+        "Go / C++ 追加に向けたサーバー側サンドボックス（Docker / Firecracker / Vercel Sandbox）採点方式を設計",
+      ],
+      techDescription: "JavaScript の採点はブラウザ内の Web Worker でユーザーコードを隔離実行し、console.log を差し替えて stdout を捕捉、AsyncFunction で assertion を評価することでサーバー負荷ゼロかつ安全な採点を実現しています。問題本体は DB ではなく packages/problems 配下の静的ファイルとして管理し、DB には slug / カテゴリ / difficulty 等のメタのみを格納する設計で、教材のバージョン管理と DB スキーマを分離。インフラは AWS ECS Fargate + Terraform + GitHub Actions による IaC / CI/CD、認証は JWT + Google OAuth、データストアは PostgreSQL 16 + Redis 7 を採用しています。",
+      media: [
+        { type: "image", src: "/projects/programming-practice/demo.gif", alt: "Programming Practice デモ" },
+        { type: "image", src: "/projects/programming-practice/problem-list.png", alt: "Programming Practice 問題一覧" },
+        { type: "image", src: "/projects/programming-practice/problem-doing.png", alt: "Programming Practice エディタ画面" },
+      ],
+      githubUrl: "https://github.com/kentakki416/programming-practice",
+    },
+  },
+  {
     id: 4,
     slug: "apple-iphone-3d",
     title: "Apple iPhone 3Dアニメーションサイト",
