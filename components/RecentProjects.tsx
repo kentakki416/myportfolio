@@ -14,6 +14,14 @@ const RecentProjects = () => {
 
   const filtered = projects.filter((p) => p.category === activeTab)
 
+  /**
+   * PC レイアウト方針：
+   * - 4 個のときだけ 2x2（max-w-4xl で 1 行 2 枚に制限）
+   * - それ以外（3 / 5 / 6...）は 1 行 3 枚（max-w-7xl）。5 → 3+2 / 6 → 3+3 に自然に折り返す
+   * - スマホ / タブレットは card の sm:w-96 / w-[80vw] により画面幅に応じて 1〜2 枚
+   */
+  const containerMaxWidthClass = filtered.length === 4 ? "max-w-4xl" : "max-w-7xl"
+
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
@@ -55,7 +63,7 @@ const RecentProjects = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="flex flex-wrap justify-center gap-10 lg:gap-16 p-4 mt-10 max-w-7xl mx-auto"
+          className={`flex flex-wrap justify-center gap-10 lg:gap-16 p-4 mt-10 mx-auto ${containerMaxWidthClass}`}
         >
           {filtered.length > 0 ? (
             filtered.map((item) => (
