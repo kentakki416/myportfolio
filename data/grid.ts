@@ -31,7 +31,7 @@ export const gridItems = [
   },
   {
     id: 5,
-    title: "OSS開発に挑戦中",
+    title: "個人開発に奮闘中",
     description: "最近の動向",
     className: "md:col-span-3 md:row-span-1",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
