@@ -84,9 +84,15 @@ export const expCards: ExpCard[] = [
       {
         project: "チャットボットSaaSの機能開発",
         tasks: [
-          "サンプルタスク1",
-          "サンプルタスク2",
-          "サンプルタスク3",
+          "PostfixのVM移行",
+          "MongoCのVM移行",
+          {
+            title: "Argo Workflowの監視導入",
+            children: [
+              "New Relicでの監視導入",
+              "モニター・アラートの作成",
+            ],
+          },
         ],
       },
     ],
@@ -116,7 +122,7 @@ export const expCards: ExpCard[] = [
     logoPath: "/company/kecak.png",
     title: "Kecak（副業）",
     startDate: { year: 2026, month: 1 },
-    endDate: null,
+    endDate: { year: 2026, month: 5 },
     type: "side",
     lineColor: "#eab308",
     responsibilities: [],
@@ -148,6 +154,7 @@ export const expCards: ExpCard[] = [
               "エラートラッキングの整備",
             ],
           },
+          "AIによるインシデント調査フローの導入",
         ],
       },
     ],
