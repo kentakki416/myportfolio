@@ -63,7 +63,7 @@ const RecentProjects = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className={`flex flex-wrap justify-center gap-10 lg:gap-16 p-4 mt-10 mx-auto ${containerMaxWidthClass}`}
+          className={`flex flex-wrap justify-center gap-10 lg:gap-12 p-4 mt-10 mx-auto ${containerMaxWidthClass}`}
         >
           {filtered.length > 0 ? (
             filtered.map((item) => (
