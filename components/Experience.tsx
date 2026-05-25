@@ -95,9 +95,18 @@ const Experience = () => {
                     </p>
                     <button
                       onClick={() => setSelected(card)}
-                      className="mt-4 text-sm text-purple hover:underline cursor-pointer"
+                      className="group relative mt-4 inline-flex items-center gap-2 overflow-hidden rounded-full border border-purple/40 bg-gradient-to-r from-purple/25 via-purple/10 to-blue-100/20 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_18px_-2px_rgba(203,172,249,0.45)] backdrop-blur-sm transition-all duration-300 hover:scale-[1.04] hover:border-purple hover:shadow-[0_0_28px_-2px_rgba(203,172,249,0.85)] cursor-pointer"
                     >
-                      詳細を見る →
+                      <span
+                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                        aria-hidden
+                      />
+                      <span className="relative bg-gradient-to-r from-purple to-blue-100 bg-clip-text text-transparent">
+                        詳細を見る
+                      </span>
+                      <span className="relative text-purple transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -144,9 +153,18 @@ const Experience = () => {
                     </p>
                     <button
                       onClick={() => setSelected(card)}
-                      className="mt-3 text-sm text-purple hover:underline cursor-pointer"
+                      className="group relative mt-3 inline-flex items-center gap-2 overflow-hidden rounded-full border border-purple/40 bg-gradient-to-r from-purple/25 via-purple/10 to-blue-100/20 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_18px_-2px_rgba(203,172,249,0.45)] backdrop-blur-sm transition-all duration-300 hover:scale-[1.04] hover:border-purple hover:shadow-[0_0_28px_-2px_rgba(203,172,249,0.85)] cursor-pointer"
                     >
-                      詳細を見る →
+                      <span
+                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                        aria-hidden
+                      />
+                      <span className="relative bg-gradient-to-r from-purple to-blue-100 bg-clip-text text-transparent">
+                        詳細を見る
+                      </span>
+                      <span className="relative text-purple transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
                     </button>
                   </div>
 
