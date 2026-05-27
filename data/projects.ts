@@ -64,7 +64,7 @@ export const projects: Project[] = [
     title: "SNS Battle",
     des: "1対1ビデオマッチング + テーマトーク + リアクション共有を軸にした、リアルタイムソーシャルプラットフォームです。",
     img: "/projects/sns-battle/home.png",
-    iconLists: ["/projects/ts.svg", "/projects/nodejs.jpeg", "/projects/postgresql.png", "/projects/redis.svg", "/projects/bullmq.png", "/projects/livekit.webp"],
+    iconLists: ["/projects/ts.svg", "/projects/nodejs.svg", "/projects/postgresql.svg", "/projects/redis.svg", "/projects/bullmq.svg", "/projects/livekit.svg"],
     category: "web",
     featured: true,
     detail: {
