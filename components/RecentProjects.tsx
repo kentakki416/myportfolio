@@ -74,6 +74,11 @@ const RecentProjects = () => {
                 <PinContainer
                   title="詳細を見る"
                   href={`/projects/${item.slug}`}
+                  borderClassName={
+                    item.featured
+                      ? "border-[#FFD700]/70 group-hover/pin:border-[#FFD700] shadow-[0_8px_24px_rgba(255,215,0,0.25)]"
+                      : undefined
+                  }
                 >
                   <Link href={`/projects/${item.slug}`}>
                     <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
@@ -90,9 +95,23 @@ const RecentProjects = () => {
                       />
                     </div>
 
-                    <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                      {item.title}
-                    </h1>
+                    <div className="flex items-center gap-2">
+                      <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                        {item.title}
+                      </h1>
+                      {item.featured && (
+                        <span
+                          className="shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-bold lg:text-xs"
+                          style={{
+                            color: "#FFD700",
+                            borderColor: "#FFD700",
+                            backgroundColor: "rgba(255, 215, 0, 0.08)",
+                          }}
+                        >
+                          注目
+                        </span>
+                      )}
+                    </div>
 
                     <p
                       className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"

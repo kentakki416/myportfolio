@@ -28,6 +28,7 @@ export type Project = {
   img: string;
   iconLists: string[];
   category: ProjectCategory;
+  featured?: boolean;
   detail: ProjectDetail;
 };
 
@@ -65,6 +66,7 @@ export const projects: Project[] = [
     img: "/projects/sns-battle/home.png",
     iconLists: ["/projects/redis.svg", "/projects/bullmq.svg", "/projects/livekit.svg"],
     category: "web",
+    featured: true,
     detail: {
       overview: "Turborepo + pnpm モノレポで Web（Next.js 16）・Admin・Mobile（Expo）・API（Express 5）・マッチング Worker を一括管理する、1対1ビデオマッチングを軸にしたリアルタイムソーシャルプラットフォームです。LiveKit による WebRTC ビデオ通話と、BullMQ ベースのテーマ進行ワーカーで、1 万人規模のマッチング同時待機にも耐える構成を設計しています。",
       features: [
