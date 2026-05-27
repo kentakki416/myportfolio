@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "SNS Battle",
     des: "1対1ビデオマッチング + テーマトーク + リアクション共有を軸にした、リアルタイムソーシャルプラットフォームです。",
     img: "/projects/sns-battle/home.png",
-    iconLists: ["/projects/re.svg", "/projects/next.svg", "/projects/ts.svg", "/projects/tail.svg", "/projects/stream.svg"],
+    iconLists: ["/projects/redis.svg", "/projects/bullmq.svg", "/projects/livekit.svg"],
     category: "web",
     detail: {
       overview: "Turborepo + pnpm モノレポで Web（Next.js 16）・Admin・Mobile（Expo）・API（Express 5）・マッチング Worker を一括管理する、1対1ビデオマッチングを軸にしたリアルタイムソーシャルプラットフォームです。LiveKit による WebRTC ビデオ通話と、BullMQ ベースのテーマ進行ワーカーで、1 万人規模のマッチング同時待機にも耐える構成を設計しています。",
@@ -76,8 +76,10 @@ export const projects: Project[] = [
       ],
       techDescription: "apps/api（Express 5）と apps/matching-worker（BullMQ）を分離し、マッチング成立後の LiveKit Room 発行・テーマ進行・Webhook 副作用処理をキュー駆動で非同期化することで、API のレイテンシを犠牲にせずスケールできる設計にしています。リアルタイム通知は WebSocket ではなく SSE + LiveKit Data Channel に寄せ、ALB の idle timeout チューニングだけで運用可能な構成に。スキーマは packages/schema（Zod）でモノレポ全体に共有し、API 境界を完全型付け。インフラは Web のみ Vercel、API / PostgreSQL / Redis / Worker を AWS（ECS Fargate + Terraform）に置くハイブリッド構成です。ALB は Terraform module で Blue / Green の 2 つの target group を切り替える方式に統一し、ECS タスク差し替え時の無停止リリースを担保。デプロイは GitHub Actions × GitHub OIDC でキーレス化したうえで、GitHub Environments（dev / staging / production）に Required Reviewers と Environment Secrets を紐付け、本番反映前に手動承認ゲートを挟む運用にしています。",
       media: [
-        { type: "image", src: "/projects/sns-battle/matching-lobby.png", alt: "SNS Battle マッチングロビー" },
-        { type: "image", src: "/projects/sns-battle/matching-session.png", alt: "SNS Battle マッチングセッション（トークテーマ表示）" },
+        { type: "image", src: "/projects/sns-battle/demo.gif", alt: "SNS Battle デモ" },
+        { type: "image", src: "/projects/sns-battle/signin.png", alt: "SNS Battle サインイン画面" },
+        { type: "image", src: "/projects/sns-battle/home.png", alt: "SNS Battle ホーム画面" },
+        { type: "image", src: "/projects/sns-battle/matching.png", alt: "SNS Battle マッチング画面" },
       ],
     },
   },
