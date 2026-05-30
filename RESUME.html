@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>職務経歴書 - Kenta Fujimori</title>
+<style>
+  @page { size: A4; margin: 14mm 12mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: #1a1a1a;
+    font-size: 11px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 20px;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  h1 {
+    font-size: 22px;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 6px;
+    margin: 0 0 14px;
+    letter-spacing: 0.05em;
+  }
+  h2 {
+    font-size: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 22px 0 10px;
+    letter-spacing: 0.04em;
+  }
+  h3 {
+    font-size: 13px;
+    border-left: 4px solid #1a1a1a;
+    padding-left: 8px;
+    margin: 18px 0 8px;
+  }
+  h4 {
+    font-size: 12px;
+    margin: 12px 0 6px;
+    color: #333;
+    border-bottom: 1px dotted #aaa;
+    padding-bottom: 3px;
+  }
+  p { margin: 4px 0; }
+  ul { margin: 4px 0 6px 18px; padding: 0; }
+  li { margin: 2px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 10px;
+    font-size: 10.5px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 5px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f0f0f0;
+    font-weight: 600;
+  }
+  .meta-table th { width: 20%; }
+  .career-table th {
+    width: 16%;
+    background: #eef2f7;
+  }
+  .featured {
+    display: inline-block;
+    background: #d4af37;
+    color: #fff;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  @media print {
+    body { padding: 0; }
+    h2, th, .featured {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    h3, h4 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>職務経歴書</h1>
+
+<table class="meta-table">
+  <tr><th>氏名</th><td>Kenta Fujimori</td></tr>
+  <tr><th>作成日</th><td>2026年5月</td></tr>
+  <tr><th>連絡先</th><td>fujimorikenta@icloud.com</td></tr>
+  <tr><th>GitHub</th><td>https://github.com/kentakki416</td></tr>
+  <tr><th>X (Twitter)</th><td>https://x.com/A03817</td></tr>
+  <tr><th>ポートフォリオ</th><td>https://myportfolio-murex-seven.vercel.app/</td></tr>
+</table>
+
+<h2>職務要約</h2>
+<p>
+新卒で株式会社サイバーエージェントに入社し、アバターSNSアプリ「Pigg Party」のバックエンド開発からSREまで一貫して担当。VIP・アバター整形・フリマなど主要機能の要件定義から実装・テストまでをリードするとともに、SRE業務ではDatadog整備やログの整理によるオブザビリティの強化や、レイテンシ5倍改善、HelmによるWeb課金基盤構築、TerraformによるIaC導入、年間3,000万円以上のコスト削減など、開発・運用の両軸でプロダクトを支えてきました。
+</p>
+<p>
+並行して副業でも複数社のSRE業務に従事し、10億レコード規模のDBマイグレーション、CDKによるIaC刷新、ECS移行、Datadog / Sentry等のオブザビリティ基盤構築を担当。2026年3月からは株式会社wevnalに参画し、Bxプラットフォームのインフラ刷新と監視基盤強化に取り組んでいます。
+</p>
+<p>
+フルスタック開発（Next.js / React Native / Node.js / Go）に加え、SRE・インフラ（AWS / GCP / Kubernetes / Terraform）を横断できる点と、要件定義からリリース・運用改善まで一貫して推進できる点が強みです。
+</p>
+
+<h2>スキルセット</h2>
+
+<h3>言語 / フレームワーク</h3>
+<table>
+  <thead><tr><th>分類</th><th>技術</th><th>経験年数</th><th>補足</th></tr></thead>
+  <tbody>
+    <tr><td>Frontend</td><td>TypeScript</td><td>3年</td><td>全プロジェクトで採用。技術記事も複数執筆</td></tr>
+    <tr><td>Frontend</td><td>JavaScript</td><td>5年</td><td>フロントエンド〜バックエンドまで横断</td></tr>
+    <tr><td>Frontend</td><td>React</td><td>3年</td><td>カスタムHooks / 再利用性の高いコンポーネント設計</td></tr>
+    <tr><td>Frontend</td><td>Next.js</td><td>3年</td><td>SSR / SSG / ISR / キャッシュ戦略の使い分け</td></tr>
+    <tr><td>Frontend</td><td>React Native</td><td>2年</td><td>iOS / Android クロスプラットフォーム開発・リリース経験</td></tr>
+    <tr><td>Frontend</td><td>Tailwind CSS</td><td>2年</td><td>デザインシステム構築・レスポンシブ対応</td></tr>
+    <tr><td>Backend</td><td>Node.js</td><td>4年</td><td>REST / GraphQL / リアルタイム通信</td></tr>
+    <tr><td>Backend</td><td>NestJS</td><td>2年</td><td>DI / モジュール設計でスケーラブルなAPI基盤を構築</td></tr>
+    <tr><td>Backend</td><td>Go</td><td>2年</td><td>高パフォーマンスが求められるバックエンド・CLIツール</td></tr>
+  </tbody>
+</table>
+
+<h3>データベース</h3>
+<table>
+  <thead><tr><th>技術</th><th>経験年数</th><th>補足</th></tr></thead>
+  <tbody>
+    <tr><td>PostgreSQL</td><td>3年</td><td>複雑なクエリ最適化・マイグレーション管理</td></tr>
+    <tr><td>MySQL</td><td>3年</td><td>パフォーマンスチューニング・レプリケーション構成</td></tr>
+    <tr><td>MongoDB</td><td>3年</td><td>スキーマ設計・インデックス最適化</td></tr>
+    <tr><td>Redis</td><td>2年</td><td>キャッシュ・セッション管理・Pub/Sub</td></tr>
+  </tbody>
+</table>
+
+<h3>インフラ / クラウド</h3>
+<table>
+  <thead><tr><th>技術</th><th>経験年数</th><th>補足</th></tr></thead>
+  <tbody>
+    <tr><td>AWS</td><td>3年</td><td>EC2 / ECS / Lambda / S3 / RDS / Beanstalk</td></tr>
+    <tr><td>GCP</td><td>2年</td><td>Cloud Run / GKE / BigQuery / MemoryStore</td></tr>
+    <tr><td>Kubernetes</td><td>2年</td><td>マイクロサービスのデプロイ・スケーリング</td></tr>
+    <tr><td>Docker</td><td>3年</td><td>マルチステージビルドなどベストプラクティス運用</td></tr>
+    <tr><td>Terraform</td><td>2年</td><td>IaCによるクラウドリソース管理</td></tr>
+    <tr><td>Vercel</td><td>2年</td><td>Next.jsのデプロイ・プレビュー環境運用</td></tr>
+  </tbody>
+</table>
+
+<h3>開発支援 / 監視 / その他</h3>
+<table>
+  <thead><tr><th>技術</th><th>経験年数</th><th>補足</th></tr></thead>
+  <tbody>
+    <tr><td>Git</td><td>5年</td><td>Git Flow / GitHub Flow の運用設計・レビュー体制整備</td></tr>
+    <tr><td>GitHub Actions</td><td>2年</td><td>CI/CD パイプライン設計・自動化推進</td></tr>
+    <tr><td>Datadog</td><td>2年</td><td>APM / ログ / メトリクス基盤の構築・運用</td></tr>
+    <tr><td>Sentry</td><td>2年</td><td>エラートラッキング導入・品質改善サイクル確立</td></tr>
+    <tr><td>Claude (AI)</td><td>1年</td><td>コード生成・レビュー・設計相談での活用</td></tr>
+  </tbody>
+</table>
+
+<h3>得意領域 / 興味分野</h3>
+<ul>
+  <li>バックエンド設計（DI / Repository パターン / モノレポ）</li>
+  <li>SRE / オブザビリティ（Datadog / New Relic / Sentry）</li>
+  <li>パフォーマンス改善（DB最適化・キャッシュ設計・スケール戦略）</li>
+  <li>ネットワーク・アーキテクチャ全般</li>
+</ul>
+
+<h2>職務経歴詳細</h2>
+
+<h3>1. 株式会社サイバーエージェント（正社員）</h3>
+<table class="career-table">
+  <tbody>
+    <tr><th>期間</th><td>2023年4月 〜 2026年1月（2年10ヶ月）</td></tr>
+    <tr><th>役割</th><td>バックエンドエンジニア / SREエンジニア</td></tr>
+    <tr><th>プロダクト</th><td>Pigg Party（ソーシャルアバターアプリ）</td></tr>
+    <tr><th>使用技術</th><td>TypeScript / Node.js / NestJS / MySQL / Redis / Docker / Kubernetes / Helm / GCP（GKE / MemoryStore / Cloud Armor 等） / Terraform / Datadog</td></tr>
+  </tbody>
+</table>
+
+<h4>1-1. Pigg Party バックエンド開発</h4>
+<table class="career-table">
+  <tbody>
+    <tr>
+      <th>業務内容</th>
+      <td>
+        ・<b>VIP機能の拡張（約3ヶ月）</b>: DB / アーキテクチャの設計から実装・テストまで一貫して担当<br>
+        ・<b>アバターの整形機能（約6ヶ月）</b>: 要件定義 → 設計 → 実装 → テストまで担当<br>
+        ・<b>ユーザー間フリマ機能（約6ヶ月）</b>: 要件定義からテストまで担当。バックエンドチームをリードし、複数メンバーで開発を推進
+      </td>
+    </tr>
+    <tr>
+      <th>効果<br>（補足欄）</th>
+      <td>
+        ・全ての開発でスケジュール遅延なし、無事故リリース<br>
+        ・高課金者に対するアプローチを増やすという事業戦略の中心をになうVIP機能とフリマ機能をリリースし、業績向上に貢献<br>
+        ・開発と並行して、テスト基盤の整理や、Typescript化を行い、保守性が向上
+      </td>
+    </tr>
+    <tr>
+      <th>意識した点<br>（補足欄）</th>
+      <td>
+        ・ユーザー数がスケールしてもボトルネックにならないように、パフォーマンスの観点から仕様を提案・実装<br>
+        ・単一障害点にならないようにフォールバック・リカバリーも考慮<br>
+        ・要件い合わせてCloud ArmorやClout Tasksなど新しい技術を調査・提案して導入
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>1-2. Pigg Party SRE業務</h4>
+<table class="career-table">
+  <tbody>
+    <tr>
+      <th>業務内容</th>
+      <td>
+        ・テストコードのリアーキテクチャ<br>
+        ・CI/CD の高速化と整備<br>
+        ・<b>パフォーマンス改善</b>: API レイテンシ約5倍改善 / MemoryStore リードレプリカ導入 / コンテナ起動時間 約40秒削減 / スケール戦略の再設計（HPA 調整）<br>
+        ・<b>Web課金基盤の構築</b>: Helm による Web 課金環境構築 / Cloud Armor 導入 / 決済基盤構築 / 関連 API 追加実装<br>
+        ・<b>オブザビリティ強化</b>: AsyncLocalStorage を用いた Logger 整備（リクエスト単位の付加情報）<br>
+        ・画像配信サーバーの社内クラウドへの移行および、Terrafrom管理の導入<br>
+      </td>
+    </tr>
+    <tr>
+      <th>効果<br>（補足欄）</th>
+      <td>
+        ・API レイテンシ 約5倍改善<br>
+        ・コンテナ起動時間 約40秒短縮<br>
+        ・年間 3,000万円以上のインフラコスト削減<br>
+      </td>
+    </tr>
+    <tr>
+      <th>意識した点<br>（補足欄）</th>
+      <td>
+        ・自ら調査して、タスクとして提案・改善まで行った<br>
+        ・コストパフォーマンスを考慮して、タスクの優先順位や実施可否を判断<br> 
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2. 株式会社wevnal（正社員）</h3>
+<table class="career-table">
+  <tbody>
+    <tr><th>期間</th><td>2026年3月 〜 現在</td></tr>
+    <tr><th>役割</th><td>SREエンジニア</td></tr>
+    <tr><th>プロダクト</th><td>チャットボット SaaS</td></tr>
+    <tr><th>使用技術</th><td>New Relic / Argo Workflow / Postfix / MongoDB</td></tr>
+  </tbody>
+</table>
+
+<h4>2-1. Bxプラットフォーム インフラ・監視刷新</h4>
+<table class="career-table">
+  <tbody>
+    <tr>
+      <th>業務内容</th>
+      <td>
+        ・Postfix のVM移行<br>
+        ・MongoC のVM移行<br>
+        ・Argo Workflow の監視導入: New Relic での監視導入 / モニター・アラート作成
+      </td>
+    </tr>
+    <tr>
+      <th>効果<br>（補足欄）</th>
+      <td>
+        ・旧インフラから新インフラへの移行、およびモニターの整理によりオブザビリティ・保守性の強化<br>
+      </td>
+    </tr>
+    <tr>
+      <th>意識した点<br>（補足欄）</th>
+      <td>
+        ・AnsibleとARMによるIacで保守性を担保<br>
+        ・調査・検証を重ね無事故リリース
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>3. 株式会社Stract（業務委託 / 副業）</h3>
+<table class="career-table">
+  <tbody>
+    <tr><th>期間</th><td>2025年1月 〜 2026年1月（1年）</td></tr>
+    <tr><th>役割</th><td>SREエンジニア</td></tr>
+    <tr><th>プロダクト</th><td>plug</td></tr>
+    <tr><th>使用技術</th><td>AWS（ECS / Elastic Beanstalk / CloudFormation） / AWS CDK / TypeScript / Node.js</td></tr>
+  </tbody>
+</table>
+
+<h4>3-1. plug SRE業務</h4>
+<table class="career-table">
+  <tbody>
+    <tr>
+      <th>業務内容</th>
+      <td>
+        ・10億レコード以上の巨大テーブルの INT → BIGINT 移行<br>
+        ・CloudFormation 管理から AWS CDK による IaC への移行<br>
+        ・Elastic Beanstalk から ECS への移行<br>
+        ・ロギング改善（AsyncLocalStorage を用いた付加情報付与）<br>
+        ・CI 時間の短縮
+      </td>
+    </tr>
+    <tr>
+      <th>効果<br>（補足欄）</th>
+      <td>
+        ・CIで40分くらいかかっていたのものをキャッシュやテストの分割により15分に短縮<br>
+        ・ElasticBeanstalkからECSへ移行することで、リソース起因のデプロイ失敗を解決<br>
+        ・INT->BIGINT移行により、データサイズの上限問題を解決
+      </td>
+    </tr>
+    <tr>
+      <th>意識した点<br>（補足欄）</th>
+      <td>
+        ・インフラの作業では事前に検証を重ねて、本番へのデプロイを行うことで無事故リリースを実現
+        ・今後の保守性やAIとの親和性を考慮して、cdkによるIacを提案
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4. 株式会社Kecak（業務委託 / 副業）</h3>
+<table class="career-table">
+  <tbody>
+    <tr><th>期間</th><td>2026年1月 〜 2026年5月（5ヶ月）</td></tr>
+    <tr><th>役割</th><td>SREエンジニア</td></tr>
+    <tr><th>プロダクト</th><td>オリパワン</td></tr>
+    <tr><th>使用技術</th><td>Datadog / Sentry / Node.js / TypeScript / Redis</td></tr>
+  </tbody>
+</table>
+
+<h4>4-1. オリパワン SRE業務</h4>
+<table class="career-table">
+  <tbody>
+    <tr>
+      <th>業務内容</th>
+      <td>
+        ・ロギング整備（AsyncLocalStorage を用いた付加情報付与）<br>
+        ・エラーハンドリング整備<br>
+        ・<b>Datadog 導入</b>: ダッシュボード作成 / カスタムメトリクス導入 / alert・warn レベルのモニター作成 / オブザビリティ文化の浸透 / Cost Manager によるコスト削減<br>
+        ・<b>パフォーマンス改善</b>: リードレプリカ導入 / キャッシュ層の追加<br>
+        ・Sentry によるエラートラッキング整備<br>
+        ・AI によるインシデント調査フローの導入
+      </td>
+    </tr>
+    <tr>
+      <th>効果<br>（補足欄）</th>
+      <td>
+        ・参画時点では、オブザビリティが何もなく障害が発生しても原因の追及ができていなかったがDatadogとSentryを導入することで障害の原因とユーザー影響の調査がすぐにできる状態になった
+        ・すぐにスパイクでアプリケーションが死ぬ問題があったが、リードレプリカの導入やトランザクションのチューニング・不必要なAPIコールなどを改善して、パフォーマンスが安定
+        ・モニターの整備や週一のメトリクス監視会を設けてチーム全体でパフォーマンス改善に取り組めるようになった
+      </td>
+    </tr>
+    <tr>
+      <th>意識した点<br>（補足欄）</th>
+      <td>
+        ・狼アラートを防ぐために、4xx系エラーと5xx系エラーを整備
+        ・Datadogを整備して、エラーが発生した時のユーザーやどこの処理で失敗したのか、また、処理が長いユーザーがどこで時間がかかっているのかがすぐにわかるように対応
+        ・全てのタスクで自ら提案・スピーディーに対応
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>個人開発・OSSプロジェクト</h2>
+
+<h3>Money Management（家計管理アプリ）</h3>
+<p><b>概要</b>: Turborepo によるモノレポ構成で、Web（Next.js）と管理画面の2つのフロントエンドを持つ家計管理アプリ。複数決済サービスの CSV を取り込み、支出を自動カテゴリ分類・可視化。</p>
+<ul>
+  <li>銀行・決済サービス別 CSV インポート（SMBC / MUFG / PayPay 等）</li>
+  <li>キーワードマッチによる支出の自動カテゴリ分類</li>
+  <li>月別 / カテゴリ別ダッシュボード</li>
+  <li>Google OAuth + JWT 認証</li>
+  <li>管理画面によるユーザー / カテゴリルール管理</li>
+</ul>
+<p><b>技術スタック</b>: Next.js / TypeScript / Tailwind CSS / Node.js / MySQL / Terraform / GitHub Actions</p>
+<p><b>設計上の工夫</b>: DI パターンによる Controller / Repository / Service の責務分離、Zod スキーマをモノレポパッケージとしてフロントと共有し API 境界を型安全化。</p>
+<p><b>GitHub</b>: https://github.com/kentakki416/money-management</p>
+
+<h3>SNS Battle（リアルタイム1対1ビデオマッチング）<span class="featured">FEATURED</span></h3>
+<p><b>概要</b>: Turborepo + pnpm モノレポで Web（Next.js 16）/ Admin / Mobile（Expo）/ API（Express 5）/ マッチング Worker を一括管理する、LiveKit ベースの 1対1 ビデオマッチング SNS。1万人規模の同時待機を想定した設計。</p>
+<ul>
+  <li>LiveKit による 1対1 ビデオマッチング（10ラウンド / テーマ自動切替 / 紙吹雪演出）</li>
+  <li>LiveKit Data Channel を用いたリアクション・スタンプの即時相互反映</li>
+  <li>カウントダウン / テーマ切替などの SFX 同期再生</li>
+  <li>MBTI 相性スコアに基づくトークテーマの事前スケジューリング</li>
+  <li>グラスモーフィズム UI（Tailwind v4 + Framer Motion）</li>
+</ul>
+<p><b>技術スタック</b>: TypeScript / Next.js 16 / Express 5 / BullMQ / LiveKit / PostgreSQL / Redis / Expo / Vercel / AWS ECS Fargate / Terraform / GitHub Actions（OIDC）</p>
+<p><b>設計上の工夫</b>:</p>
+<ul>
+  <li>API と マッチング Worker を分離し、LiveKit Room 発行・テーマ進行・Webhook 副作用処理をキュー駆動で非同期化</li>
+  <li>WebSocket ではなく SSE + LiveKit Data Channel に寄せ、ALB の idle timeout チューニングのみで運用可能に</li>
+  <li>packages/schema（Zod）で API 境界を完全型付け</li>
+  <li>Web は Vercel、API / DB / Redis / Worker は AWS というハイブリッド構成</li>
+  <li>ALB の Blue / Green を Terraform module 化し、ECS タスク差し替え時の無停止リリースを担保</li>
+  <li>GitHub Environments + Required Reviewers で本番反映前の手動承認ゲートを構築</li>
+</ul>
+
+<h3>Programming Practice（プログラミング学習プラットフォーム）</h3>
+<p><b>概要</b>: Turborepo によるモノレポ構成で、Web（Next.js 16）/ Mobile（Expo）/ API（Express 5）を一括管理。ブラウザ上で JavaScript の問題を解き、自動採点で即フィードバックを得られる学習プラットフォーム。</p>
+<ul>
+  <li>Web エディタによる JavaScript 問題演習・コード実行・テスト採点</li>
+  <li>Web Worker サンドボックスによるブラウザ完結の自動採点（DoS / インジェクションリスクなし）</li>
+  <li>問題コンテンツ（meta.json / description.md / initial-code.js / tests.json）を Git 管理の静的ファイルとして提供</li>
+  <li>Google OAuth + JWT による認証・解答状況の蓄積</li>
+  <li>Go / C++ 追加に向けたサーバー側サンドボックス採点方式を設計</li>
+</ul>
+<p><b>技術スタック</b>: Next.js 16 / TypeScript / Tailwind CSS / Express 5 / PostgreSQL 16 / Redis 7 / AWS ECS Fargate / Terraform / GitHub Actions</p>
+<p><b>設計上の工夫</b>: Web Worker による隔離実行で console.log を差し替えて stdout を捕捉し、AsyncFunction で assertion を評価することでサーバー負荷ゼロの安全な採点を実現。問題本体を静的ファイル化し、DB スキーマと教材バージョン管理を分離。</p>
+<p><b>GitHub</b>: https://github.com/kentakki416/programming-practice</p>
+
+</body>
+</html>
